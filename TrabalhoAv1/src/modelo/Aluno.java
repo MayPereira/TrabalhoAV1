@@ -8,8 +8,15 @@ public class Aluno {
 	private long telefone;
 	private boolean situacao;
 
-	public Aluno() {
-		
+	
+	public Aluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.matricula = matricula;
+		this.email = email;
+		this.telefone = telefone;
+		this.situacao = situacao;
 	}
 
 	public String getNome() {
