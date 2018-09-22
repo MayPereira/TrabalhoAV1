@@ -10,7 +10,6 @@ public class Aluno {
 
 	
 	public Aluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao) {
-		super();
 		this.nome = nome;
 		this.cpf = cpf;
 		this.matricula = matricula;
@@ -67,6 +66,17 @@ public class Aluno {
 		this.situacao = situacao;
 	}
 	
+	//metodos
+	
+	public void mostrarAlunos() {
+		System.out.println("Nome do aluno: " + this.nome);
+		System.out.println("CPF do aluno: " + this.cpf);
+		System.out.println("Matrícula do aluno: " + this.matricula);
+		System.out.println("Email do aluno: " + this.email);
+		System.out.println("Telefone do aluno: " + this.telefone);
+		System.out.println("Situação do aluno: " + this.situacao);
+		
+	}
 	
 
 }

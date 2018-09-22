@@ -18,7 +18,39 @@ public class AlunoService {
 	}
 	
 	//Pesquisando aluno
+	public String buscarAluno(String nome) {
+		for (Aluno aluno : listaAluno) {
+			if(aluno.getNome()==nome) {
+				return nome;
+			}
+			
+		}
+		System.out.println("Aluno não encontrado!");
+		return null;
+	}
 	
+	//Atualizar dados do aluno
+	
+	public void alterarAluno(Aluno obj, String nome, long cpf, long matricula, String email, long telefone, boolean situacao) {
+		obj.setNome(nome);
+		obj.setCpf(cpf);
+		obj.setMatricula(matricula);
+		obj.setTelefone(telefone);
+		obj.setSituacao(situacao);
+		
+	}
+	
+	public void apagarAluno(String nome) {
+		String obj = buscarAluno(nome);
+		listaAluno.remove(obj);
+		
+	}
+	public void listarAluno() {
+		for (Aluno aluno : listaAluno) {
+			aluno.mostrarAlunos();
+			
+		}
+	}
 
 
 }
