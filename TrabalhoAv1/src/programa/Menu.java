@@ -1,6 +1,8 @@
 package programa;
 import java.util.Scanner;
 
+import modelo.Disciplina;
+import modelo.Professor;
 import service.AlunoService;
 import service.CursoService;
 import service.DisciplinaService;
@@ -95,9 +97,33 @@ public class Menu {
 		case 1:
 			System.out.println(" CADASTRAR DADOS DO CURSO ");
 			
-			
-			
+			System.out.println("Digite nome do curso: ");
+			String nome = teclado.next();
+			System.out.println("Digite codigo do curso: ");
+			int codigo = teclado.nextInt();
+			System.out.println("Digite o turno do curso: ");
+			String turno = teclado.next();
+			System.out.println("Digite o nome do coordenador");
+			String coordenador = teclado.next();
+			System.out.println("Digite o nome disciplina: ");
+			String disciplina = teclado.next();
+		//	cursoService.addCurso(nome, codigo, turno, coordenador, disciplina);
+					
 			break;
+		case 2:
+			System.out.println(" LISTAR DADOS DO CURSO ");
+			//criar método de listar na classe curso!
+			break;
+			
+			// caso selecionado a opção 3
+		case 3:
+			System.out.println(" ALTERAR DADOS DO CURSO ");
+			cursoService.alterarCurso(obj, nome, codigo, turno, coordenador, disciplina);
+			break;
+			
+			// caso selecionado a opção 4
+		case 4: 
+			System.out.println(" EXCLUIR DADOS DO ALUNO ");
 
 		default:
 			break;
