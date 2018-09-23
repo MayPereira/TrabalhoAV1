@@ -18,6 +18,7 @@ public class Menu {
 		
 		int ops = -1;
 		int ops1 = -1;
+		int ops2 = -1;
 		
 	System.out.println("************ SISTEMA ACADÊMICO *************");	
 	System.out.println("             ***** MENU *****");
@@ -28,12 +29,15 @@ public class Menu {
 	System.out.println("Selecione uma opção: ");
 	ops = teclado.nextInt();
 	
+	while(ops!=0) {
 	
 	switch (ops) {
 	case 1:
 		// Menu do aluno
-		System.out.println("1 - CADASTRAR      2 - ALTERAR ");
-		System.out.println("3 - LISTAR         4 - EXCLUIR ");
+		System.out.println("   Você está no menu ALUNO    ");
+		System.out.println("                              ");
+		System.out.println("1 - CADASTRAR      2 - LISTAR ");
+		System.out.println("3 - ALTERAR        4 - EXCLUIR ");
 		
 		System.out.println("Selecione uma opção: ");
 		ops1 = teclado.nextInt();
@@ -54,17 +58,53 @@ public class Menu {
 			long telefone = teclado.nextLong();
 			System.out.println("Situação do aluno: ");
 			boolean situacao = teclado.hasNext();
-			System.out.println("Curso matriculado: ");
+		//	System.out.println("Curso matriculado: ");
 			//curso = teclado.nextLine();
-			System.out.println("Disciplina matriculada: ");
+		//	System.out.println("Disciplina matriculada: ");
 			//String disciplina = teclado.nextLine();
 			alunoService.addAluno(nome, cpf, matricula, email, telefone, situacao);
 			
 			break;
-
+			// caso selecionado a opção 2
+		case 2:
+			System.out.println(" LISTAR DADOS DO ALUNO ");
+			alunoService.listarAluno();
+			break;
+			
+			// caso selecionado a opção 3
+		case 3:
+			System.out.println(" ALTERAR DADOS DO ALUNO ");
+			break;
+			
+			// caso selecionado a opção 4
+		case 4: 
+			System.out.println(" EXCLUIR DADOS DO ALUNO ");
 	default:
 	break;
 		}
+	case 2:
+		// Menu do curso
+			System.out.println("   Você está no menu CURSO    ");
+			System.out.println("                              ");
+			System.out.println("1 - CADASTRAR      2 - LISTAR ");
+			System.out.println("3 - ALTERAR        4 - EXCLUIR ");
+				
+			System.out.println("Selecione uma opção: ");
+				ops2 = teclado.nextInt();
+		switch (ops2) {
+		case 1:
+			System.out.println(" CADASTRAR DADOS DO CURSO ");
+			
+			
+			
+			break;
+
+		default:
+			break;
+		}
+
+				
+				
 		
 	break;
 
@@ -82,5 +122,9 @@ public class Menu {
 		
 
 	}
+	teclado.close();
 
+
+}
+	
 }
