@@ -1,8 +1,7 @@
 package programa;
 import java.util.Scanner;
 
-import modelo.Disciplina;
-import modelo.Professor;
+import modelo.Aluno;
 import service.AlunoService;
 import service.CursoService;
 import service.DisciplinaService;
@@ -21,6 +20,7 @@ public class Menu {
 		int ops = -1;
 		int ops1 = -1;
 		int ops2 = -1;
+		int ops3 = -1;
 		
 	System.out.println("************ SISTEMA ACADÊMICO *************");	
 	System.out.println("             ***** MENU *****");
@@ -43,6 +43,8 @@ public class Menu {
 		
 		System.out.println("Selecione uma opção: ");
 		ops1 = teclado.nextInt();
+		
+		while(ops1!=0) {
 		// caso selecionado a opção 1
 		switch (ops1) {
 		case 1:
@@ -84,6 +86,7 @@ public class Menu {
 	default:
 	break;
 		}
+	}
 	case 2:
 		// Menu do curso
 			System.out.println("   Você está no menu CURSO    ");
@@ -93,6 +96,8 @@ public class Menu {
 				
 			System.out.println("Selecione uma opção: ");
 				ops2 = teclado.nextInt();
+		while(ops2!=0) {
+				
 		switch (ops2) {
 		case 1:
 			System.out.println(" CADASTRAR DADOS DO CURSO ");
@@ -118,7 +123,7 @@ public class Menu {
 			// caso selecionado a opção 3
 		case 3:
 			System.out.println(" ALTERAR DADOS DO CURSO ");
-			cursoService.alterarCurso(obj, nome, codigo, turno, coordenador, disciplina);
+		//	cursoService.alterarCurso(obj, nome, codigo, turno, coordenador, disciplina);
 			break;
 			
 			// caso selecionado a opção 4
@@ -128,16 +133,62 @@ public class Menu {
 		default:
 			break;
 		}
+	}
+		while(ops3!=0) {
+			switch (ops3) {
+			case 1:
+				System.out.println(" CADASTRAR DADOS DA DISCIPLINA ");
+				System.out.println("Digite o nome da disciplina: ");
+				String nome = teclado.next();
+				System.out.println("Digite o codigo da disciplina: ");
+				int codigo = teclado.nextInt();
+				System.out.println("Digite o professor da disciplina: ");
+				//perguntar em sala
+				Scanner professor = teclado.useDelimiter(nome);
+				System.out.println("Digite a chamada: ");
+				boolean chamada = teclado.hasNext();
+				System.out.println("Informe a sala: ");
+				int sala = teclado.nextInt();
+				System.out.println("Informe a carga horária da disciplina: ");
+				String cargaHo = teclado.next();
+				System.out.println("Informe o horário do curso: ");
+				String horario = teclado.next();
+				System.out.println("Informe o custo: ");
+				int custo = teclado.nextInt();
+				
+				
+			//	disciplinaService.addDisciplina(nome, codigo, professor, chamada, sala, cargaHo, horario, custo);
+
+			case 2:
+				System.out.println(" LISTAR DADOS DA DISCIPLINA ");
+				//criar método de listar na classe curso!
+				break;
+				
+				// caso selecionado a opção 3
+			case 3:
+				System.out.println(" ALTERAR DADOS DA DISCIPLINA ");
+			//	cursoService.alterarCurso(obj, nome, codigo, turno, coordenador, disciplina);
+				break;
+				
+				// caso selecionado a opção 4
+			case 4: 
+				System.out.println(" EXCLUIR DADOS DA DISCIPLINA ");
 
 				
 				
-		
+				break;
+
+			default:
+				break;
+			}
+		}
+	
 	break;
 
 	default:
 		break;
 	}
-	
+
 	
 
 	
