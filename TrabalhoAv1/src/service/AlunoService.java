@@ -2,6 +2,8 @@ package service;
 import java.util.ArrayList;
 
 import modelo.Aluno;
+import modelo.Curso;
+import modelo.Disciplina;
 
 public class AlunoService {
 	ArrayList<Aluno> listaAluno = new ArrayList();
@@ -12,8 +14,8 @@ public class AlunoService {
 	
 	//Criando aluno
 	
-	public void addAluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao) {
-		Aluno c = new Aluno(nome, cpf, matricula, email,telefone, situacao);
+	public void addAluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao,Curso curso, Disciplina disciplina) {
+		Aluno c = new Aluno(nome, cpf, matricula, email,telefone, situacao, curso, disciplina);
 		listaAluno.add(c);
 	}
 	
