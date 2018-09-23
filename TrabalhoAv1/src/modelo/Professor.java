@@ -80,6 +80,19 @@ public class Professor {
 		this.disciplina = disciplina;
 	}
 	
+	public void mostraProfessor() {
+		System.out.println("Nome do professor: " + this.nome);
+		System.out.println("CPF do professor: " + this.cpf);
+		System.out.println("Email do professor: " + this.email);
+		System.out.println("Telefone do professor: " + this.telefone);
+		System.out.println("Endereço do professor: " + this.endereco);
+		System.out.println("Categoria do professor: " + this.categoria);
+		System.out.println("Disciplinas do professor: " + this.disciplina);
+
+
+
+		
+	}
 	
 
 }

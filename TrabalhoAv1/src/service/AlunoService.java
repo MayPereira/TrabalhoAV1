@@ -40,6 +40,8 @@ public class AlunoService {
 		
 	}
 	
+	//Apagar dados do aluno
+	
 	public void apagarAluno(String nome) {
 		String obj = buscarAluno(nome);
 		listaAluno.remove(obj);
