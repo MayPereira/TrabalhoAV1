@@ -14,8 +14,9 @@ public class AlunoService {
 	
 	//Criando aluno
 	
-	public void addAluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao,Curso curso, Disciplina disciplina) {
-		Aluno c = new Aluno(nome, cpf, matricula, email,telefone, situacao, curso, disciplina);
+	public void addAluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao)//*Curso curso, Disciplina disciplina
+	{
+		Aluno c = new Aluno(nome, cpf, matricula, email,telefone, situacao); /*curso, disciplina*/
 		listaAluno.add(c);
 	}
 	

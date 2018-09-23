@@ -11,15 +11,16 @@ public class Aluno {
 	private Disciplina disciplina;
 
 	
-	public Aluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao, Curso curso, Disciplina disciplina) {
+	public Aluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao)//, Curso curso, Disciplina disciplina) 
+	{
 		this.nome = nome;
 		this.cpf = cpf;
 		this.matricula = matricula;
 		this.email = email;
 		this.telefone = telefone;
 		this.situacao = situacao;
-		this.curso = curso;
-		this.disciplina = disciplina;
+		//this.curso = curso;
+	//	this.disciplina = disciplina;
 	}
 	
 
