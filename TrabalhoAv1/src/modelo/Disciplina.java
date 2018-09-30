@@ -1,10 +1,13 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Disciplina {
 	private String nome;
 	private int codigo;
-	private Professor professor;
-	private Aluno chamada;
+	List<Professor> professor = new ArrayList();
+	List<Aluno> chamada = new ArrayList();
 	private int sala;
 	private String cargaHo;
 	private String horario;
@@ -14,13 +17,17 @@ public class Disciplina {
 		// TODO Auto-generated constructor stub
 	}
 	
-
-	public Disciplina(String nome, int codigo, Professor professor, Aluno chamada, int sala, String cargaHo,
+	public List<Professor> getProfessor() {
+		return this.professor;
+	}
+	public List<Aluno> getChamada(){
+		return this.chamada;
+	}
+	
+	public Disciplina(String nome, int codigo, int sala, String cargaHo,
 			String horario, int custo) {
 		this.nome = nome;
 		this.codigo = codigo;
-		this.professor = professor;
-		this.chamada = chamada;
 		this.sala = sala;
 		this.cargaHo = cargaHo;
 		this.horario = horario;
@@ -42,22 +49,6 @@ public class Disciplina {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
-	}
-
-	public Professor getProfessor() {
-		return professor;
-	}
-
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
-	}
-
-	public Aluno getChamada() {
-		return chamada;
-	}
-
-	public void setChamada(Aluno chamada) {
-		this.chamada = chamada;
 	}
 
 	public int getSala() {

@@ -1,5 +1,8 @@
 package modelo;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Aluno {
 	private String nome;
 	private long cpf;
@@ -7,43 +10,24 @@ public class Aluno {
 	private String email;
 	private long telefone;
 	private boolean situacao;
-	private Curso curso;
-	private Disciplina disciplina;
-
+	private List<Curso> cursos = new ArrayList();
+	private List<Disciplina> disciplinas = new ArrayList();
 	
-	public Aluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao)//, Curso curso, Disciplina disciplina) 
-	{
+	public Aluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.matricula = matricula;
 		this.email = email;
 		this.telefone = telefone;
 		this.situacao = situacao;
-		//this.curso = curso;
-	//	this.disciplina = disciplina;
+	}
+	public List<Curso> getCursos(){
+		return this.cursos;
+	}
+	public List<Disciplina> getDisciplinas(){
+		return this.disciplinas;
 	}
 	
-
-	public Curso getCurso() {
-		return curso;
-	}
-
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
-
-
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-
-
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
-
-
 	public String getNome() {
 		return nome;
 	}
@@ -100,10 +84,7 @@ public class Aluno {
 		System.out.println("Matrícula do aluno: " + this.matricula);
 		System.out.println("Email do aluno: " + this.email);
 		System.out.println("Telefone do aluno: " + this.telefone);
-		System.out.println("Situação do aluno: " + this.situacao);
-		System.out.println("Curso do aluno" + this.curso);
-		
-		
+		System.out.println("Situação do aluno: " + this.situacao);		
 	}
 	
 

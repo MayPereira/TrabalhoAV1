@@ -15,16 +15,15 @@ public class DisciplinaService {
 	
 	//Adicionando disciplina
 	
-	public void addDisciplina(String nome, int codigo, Professor professor, Aluno chamada, int sala, String cargaHo,
-			String horario, int custo) {
-		Disciplina d = new Disciplina(nome, codigo, professor, chamada, sala, cargaHo, horario, custo);
+	public void addDisciplina(String nome,int codigo,int sala, String cargaHo, String horario, int custo) {
+		Disciplina d = new Disciplina(nome, codigo, sala, cargaHo, horario, custo);
 		listaDisciplina.add(d);
 	}
 	
 	//Buscando disciplina
 	public String buscaDisciplina(String nome) {
 		for (Disciplina disciplina : listaDisciplina) {
-			if (disciplina.getNome()==nome) {
+			if (disciplina.getNome().equals(nome)) {
 				return nome;
 			}
 			
@@ -37,8 +36,6 @@ public class DisciplinaService {
 			String horario, int custo) {
 		obj.setNome(nome);
 		obj.setCodigo(codigo);
-		obj.setProfessor(professor);
-		obj.setChamada(chamada);
 		obj.setSala(sala);
 		obj.setCargaHo(cargaHo);
 		obj.setHorario(horario);

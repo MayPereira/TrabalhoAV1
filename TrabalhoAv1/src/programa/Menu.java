@@ -66,6 +66,8 @@ public class Menu {
 			//curso = teclado.nextLine();
 		//	System.out.println("Disciplina matriculada: ");
 			//String disciplina = teclado.nextLine();
+			
+			System.out.println("Aluno cadastrado com sucesso!!!");
 			alunoService.addAluno(nome, cpf, matricula, email, telefone, situacao);
 			
 			break;
@@ -74,15 +76,24 @@ public class Menu {
 			System.out.println(" LISTAR DADOS DO ALUNO ");
 			alunoService.listarAluno();
 			break;
-			
 			// caso selecionado a opção 3
 		case 3:
 			System.out.println(" ALTERAR DADOS DO ALUNO ");
+			System.out.println("Digite o nome do aluno a ser alterado: ");
+		//Aluno obj = alunoService.buscarAluno(teclado.next());
+			System.out.println("Digite o telefone do aluno a ser alterado: ");
+			//alunoService.alterarAluno(objt, nome, cpf, matricula, email, telefone, situacao);
+
+			
+			
 			break;
 			
 			// caso selecionado a opção 4
 		case 4: 
 			System.out.println(" EXCLUIR DADOS DO ALUNO ");
+			System.out.println("Digite o nome do aluno a ser apagado: ");
+			alunoService.apagarAluno(teclado.next());
+
 	default:
 	break;
 		}
@@ -118,6 +129,7 @@ public class Menu {
 		case 2:
 			System.out.println(" LISTAR DADOS DO CURSO ");
 			//criar método de listar na classe curso!
+			
 			break;
 			
 			// caso selecionado a opção 3
@@ -220,7 +232,7 @@ case 1:
 	String categoria = teclado.next();
 	System.out.println("Informe disciplina do professor: ");
 	String disciplina = teclado.next();	
-	professorService.addProfessor(nome, cpf, email, telefone, endereco, categoria, disciplina);
+	professorService.addProfessor(nome, cpf, email, telefone, endereco, categoria);
 	
 	break;
 case 2:
@@ -246,8 +258,8 @@ default:
 	
 	break;
 
-	default:
-		break;
+	
+		
 	}
 
 	
@@ -266,3 +278,5 @@ default:
 }
 	
 }
+}
+

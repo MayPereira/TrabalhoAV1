@@ -14,16 +14,15 @@ public class AlunoService {
 	
 	//Criando aluno
 	
-	public void addAluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao)//*Curso curso, Disciplina disciplina
-	{
-		Aluno c = new Aluno(nome, cpf, matricula, email,telefone, situacao); /*curso, disciplina*/
+	public void addAluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao){
+		Aluno c = new Aluno(nome, cpf, matricula, email,telefone, situacao); 
 		listaAluno.add(c);
 	}
 	
 	//Pesquisando aluno
 	public String buscarAluno(String nome) {
 		for (Aluno aluno : listaAluno) {
-			if(aluno.getNome()==nome) {
+			if(aluno.getNome().equals(nome)) {
 				return nome;
 			}
 			

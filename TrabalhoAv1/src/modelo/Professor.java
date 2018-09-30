@@ -1,4 +1,7 @@
 package modelo;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Professor {
 	private String nome;
@@ -7,23 +10,23 @@ public class Professor {
 	private long telefone;
 	private String endereco;
 	private String categoria;
-	private String disciplina;
+	private List<Disciplina> disciplinas = new ArrayList();
 	
 	public Professor() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Professor(String nome, long cpf, String email, long telefone, String endereco, String categoria,
-			String disciplina) {
+	public Professor(String nome, long cpf, String email, long telefone, String endereco, String categoria) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 		this.telefone = telefone;
 		this.endereco = endereco;
 		this.categoria = categoria;
-		this.disciplina = disciplina;
 	}
-
+	public List<Disciplina> getDisciplinas(){
+		return this.disciplinas;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -71,14 +74,6 @@ public class Professor {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-
-	public String getDisciplina() {
-		return disciplina;
-	}
-
-	public void setDisciplina(String disciplina) {
-		this.disciplina = disciplina;
-	}
 	
 	public void mostraProfessor() {
 		System.out.println("Nome do professor: " + this.nome);
@@ -86,12 +81,7 @@ public class Professor {
 		System.out.println("Email do professor: " + this.email);
 		System.out.println("Telefone do professor: " + this.telefone);
 		System.out.println("Endereço do professor: " + this.endereco);
-		System.out.println("Categoria do professor: " + this.categoria);
-		System.out.println("Disciplinas do professor: " + this.disciplina);
-
-
-
-		
+		System.out.println("Categoria do professor: " + this.categoria);		
 	}
 	
 
