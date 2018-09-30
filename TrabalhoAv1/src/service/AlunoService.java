@@ -16,6 +16,7 @@ public class AlunoService {
 	
 	public void addAluno(String nome, long cpf, long matricula, String email, long telefone){
 		Aluno c = new Aluno(nome, cpf, matricula, email,telefone); 
+		
 		listaAluno.add(c);
 	}
 	
