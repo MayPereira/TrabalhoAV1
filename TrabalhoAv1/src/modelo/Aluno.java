@@ -9,17 +9,19 @@ public class Aluno {
 	private long matricula;
 	private String email;
 	private long telefone;
-	private boolean situacao;
 	private List<Curso> cursos = new ArrayList();
 	private List<Disciplina> disciplinas = new ArrayList();
+	//private String testeSituacao;
 	
-	public Aluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao) {
+	public Aluno(String nome, long cpf, long matricula, String email, long telefone ) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.matricula = matricula;
 		this.email = email;
 		this.telefone = telefone;
-		this.situacao = situacao;
+	}
+	public Aluno() {
+		// TODO Auto-generated constructor stub
 	}
 	public List<Curso> getCursos(){
 		return this.cursos;
@@ -68,15 +70,15 @@ public class Aluno {
 		this.telefone = telefone;
 	}
 
-	public boolean isSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(boolean situacao) {
-		this.situacao = situacao;
-	}
-	
 	//metodos
+	public void situacaoM() {
+		if (disciplinas.isEmpty()) {
+			System.out.println("Aluno pendente.");
+		}else{
+			System.out.println("Aluno matriculado.");
+			
+		}
+	}
 	
 	public void mostrarAlunos() {
 		System.out.println("Nome do aluno: " + this.nome);
@@ -84,8 +86,9 @@ public class Aluno {
 		System.out.println("Matrícula do aluno: " + this.matricula);
 		System.out.println("Email do aluno: " + this.email);
 		System.out.println("Telefone do aluno: " + this.telefone);
-		System.out.println("Situação do aluno: " + this.situacao);		
+		//System.out.println("Situação do aluno: " + );		
 	}
-	
 
-}
+	}
+
+

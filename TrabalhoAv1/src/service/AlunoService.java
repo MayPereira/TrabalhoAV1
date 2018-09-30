@@ -14,8 +14,8 @@ public class AlunoService {
 	
 	//Criando aluno
 	
-	public void addAluno(String nome, long cpf, long matricula, String email, long telefone, boolean situacao){
-		Aluno c = new Aluno(nome, cpf, matricula, email,telefone, situacao); 
+	public void addAluno(String nome, long cpf, long matricula, String email, long telefone){
+		Aluno c = new Aluno(nome, cpf, matricula, email,telefone); 
 		listaAluno.add(c);
 	}
 	
@@ -33,12 +33,11 @@ public class AlunoService {
 	
 	//Atualizar dados do aluno
 	
-	public void alterarAluno(Aluno obj, String nome, long cpf, long matricula, String email, long telefone, boolean situacao) {
+	public void alterarAluno(Aluno obj, String nome, long cpf, long matricula, String email, long telefone) {
 		obj.setNome(nome);
 		obj.setCpf(cpf);
 		obj.setMatricula(matricula);
 		obj.setTelefone(telefone);
-		obj.setSituacao(situacao);
 		
 	}
 	
@@ -52,6 +51,7 @@ public class AlunoService {
 	public void listarAluno() {
 		for (Aluno aluno : listaAluno) {
 			aluno.mostrarAlunos();
+			aluno.situacaoM();
 			
 		}
 	}

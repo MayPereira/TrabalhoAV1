@@ -1,7 +1,6 @@
 package programa;
 import java.util.Scanner;
 
-import modelo.Aluno;
 import service.AlunoService;
 import service.CursoService;
 import service.DisciplinaService;
@@ -11,17 +10,18 @@ public class Menu {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
+		boolean aux = true;
 		
 		AlunoService alunoService = new AlunoService();
 		CursoService cursoService = new CursoService();
 		DisciplinaService disciplinaService = new DisciplinaService();
 		ProfessorService professorService = new ProfessorService();
 		
-		int ops = -1;
-		int ops1 = -1;
-		int ops2 = -1;
-		int ops3 = -1;
-		int ops4 = -1;
+		int opsMenu = -1;
+		int opsAluno = -1;
+		int opsCurso = -1;
+		int opsDisciplina = -1;
+		int opsProfessor = -1;
 	System.out.println("************ SISTEMA ACADÊMICO *************");	
 	System.out.println("             ***** MENU *****");
 	
@@ -29,11 +29,19 @@ public class Menu {
 	System.out.println("3 - DISCIPLINA      4 - PROFESSOR");
 	
 	System.out.println("Selecione uma opção: ");
-	ops = teclado.nextInt();
+	opsMenu = teclado.nextInt();
 	
-	while(ops!=0) {
+	while(opsMenu!=0) {
+		System.out.println("************ SISTEMA ACADÊMICO *************");	
+		System.out.println("             ***** MENU *****");
+		
+		System.out.println("1 - ALUNO           2 - CURSO");
+		System.out.println("3 - DISCIPLINA      4 - PROFESSOR");
+		
+		System.out.println("Selecione uma opção: ");
+		opsMenu = teclado.nextInt();
 	
-	switch (ops) {
+	switch (opsAluno) {
 	case 1:
 		// Menu do aluno
 		System.out.println("   Você está no menu ALUNO    ");
@@ -42,11 +50,17 @@ public class Menu {
 		System.out.println("3 - ALTERAR        4 - EXCLUIR ");
 		
 		System.out.println("Selecione uma opção: ");
-		ops1 = teclado.nextInt();
+		opsAluno = teclado.nextInt();
 		
-		while(ops1!=0) {
+		while(opsAluno!=0) {
 		// caso selecionado a opção 1
-		switch (ops1) {
+		switch (opsAluno) {
+		
+		case 0:
+			System.out.println("Saindo...");
+			teclado.close();
+			aux = false;
+			break;
 		case 1:
 			System.out.println(" CADASTRAR DADOS DO ALUNO ");
 			
@@ -60,17 +74,18 @@ public class Menu {
 			String email = teclado.next();
 			System.out.println("Telefone do aluno: ");
 			long telefone = teclado.nextLong();
-			System.out.println("Situação do aluno: ");
-			boolean situacao = teclado.hasNext();
 		//	System.out.println("Curso matriculado: ");
 			//curso = teclado.nextLine();
 		//	System.out.println("Disciplina matriculada: ");
 			//String disciplina = teclado.nextLine();
-			
+			alunoService.addAluno(nome, cpf, matricula, email, telefone);
+
 			System.out.println("Aluno cadastrado com sucesso!!!");
-			alunoService.addAluno(nome, cpf, matricula, email, telefone, situacao);
-			
-			break;
+			System.out.println("Deseja cadastrar outro aluno? 1 - SIM 0 - NÃO");
+			opsAluno = teclado.nextInt();
+
+break;
+
 			// caso selecionado a opção 2
 		case 2:
 			System.out.println(" LISTAR DADOS DO ALUNO ");
@@ -84,8 +99,6 @@ public class Menu {
 			System.out.println("Digite o telefone do aluno a ser alterado: ");
 			//alunoService.alterarAluno(objt, nome, cpf, matricula, email, telefone, situacao);
 
-			
-			
 			break;
 			
 			// caso selecionado a opção 4
@@ -93,6 +106,7 @@ public class Menu {
 			System.out.println(" EXCLUIR DADOS DO ALUNO ");
 			System.out.println("Digite o nome do aluno a ser apagado: ");
 			alunoService.apagarAluno(teclado.next());
+			break;
 
 	default:
 	break;
@@ -106,10 +120,10 @@ public class Menu {
 			System.out.println("3 - ALTERAR        4 - EXCLUIR ");
 				
 			System.out.println("Selecione uma opção: ");
-				ops2 = teclado.nextInt();
-		while(ops2!=0) {
+				opsCurso = teclado.nextInt();
+		while(opsCurso!=0) {
 				
-		switch (ops2) {
+		switch (opsCurso) {
 		case 1:
 			System.out.println(" CADASTRAR DADOS DO CURSO ");
 			
@@ -154,10 +168,10 @@ public class Menu {
 					System.out.println("3 - ALTERAR        4 - EXCLUIR ");
 						
 					System.out.println("Selecione uma opção: ");
-						ops3 = teclado.nextInt();
-		while(ops3!=0) {
+						opsDisciplina = teclado.nextInt();
+		while(opsDisciplina!=0) {
 			
-			switch (ops3) {
+			switch (opsDisciplina) {
 			case 1:
 				System.out.println(" CADASTRAR DADOS DA DISCIPLINA ");
 				System.out.println("Digite o nome da disciplina: ");
@@ -206,17 +220,17 @@ public class Menu {
 			}
 		}
 	case 4:
-		// Menu da disciplina
+		// Menu do professor
 		System.out.println("   Você está no menu PROFESSOR    ");
 		System.out.println("                              ");
 		System.out.println("1 - CADASTRAR      2 - LISTAR ");
 		System.out.println("3 - ALTERAR        4 - EXCLUIR ");
 			
 		System.out.println("Selecione uma opção: ");
-			ops4 = teclado.nextInt();
-while(ops4!=0) {
+			opsProfessor = teclado.nextInt();
+while(opsProfessor!=0) {
 
-switch (ops4) {
+switch (opsProfessor) {
 case 1:
 	System.out.println("Digite o nome do professor: ");
 	String nome = teclado.next();
