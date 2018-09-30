@@ -1,6 +1,7 @@
 package programa;
 import java.util.Scanner;
 
+import modelo.Aluno;
 import service.AlunoService;
 import service.CursoService;
 import service.DisciplinaService;
@@ -22,16 +23,10 @@ public class Menu {
 		int opsCurso = -1;
 		int opsDisciplina = -1;
 		int opsProfessor = -1;
-	System.out.println("************ SISTEMA ACADÊMICO *************");	
-	System.out.println("             ***** MENU *****");
 	
-	System.out.println("1 - ALUNO           2 - CURSO");
-	System.out.println("3 - DISCIPLINA      4 - PROFESSOR");
-	
-	System.out.println("Selecione uma opção: ");
-	opsMenu = teclado.nextInt();
 	
 	while(opsMenu!=0) {
+		
 		System.out.println("************ SISTEMA ACADÊMICO *************");	
 		System.out.println("             ***** MENU *****");
 		
@@ -40,27 +35,21 @@ public class Menu {
 		
 		System.out.println("Selecione uma opção: ");
 		opsMenu = teclado.nextInt();
-	
-	switch (opsAluno) {
+		
+	switch (opsMenu) {
 	case 1:
-		// Menu do aluno
-		System.out.println("   Você está no menu ALUNO    ");
-		System.out.println("                              ");
-		System.out.println("1 - CADASTRAR      2 - LISTAR ");
-		System.out.println("3 - ALTERAR        4 - EXCLUIR ");
-		
-		System.out.println("Selecione uma opção: ");
-		opsAluno = teclado.nextInt();
-		
-		while(opsAluno!=0) {
+			while(opsAluno!=0) {
+			// Menu do aluno
+			System.out.println("   Você está no menu ALUNO    ");
+			System.out.println("                              ");
+			System.out.println("1 - CADASTRAR      2 - LISTAR ");
+			System.out.println("3 - ALTERAR        4 - EXCLUIR ");
+			
+			System.out.println("Selecione uma opção: ");
+			opsAluno = teclado.nextInt();
 		// caso selecionado a opção 1
 		switch (opsAluno) {
 		
-		case 0:
-			System.out.println("Saindo...");
-			teclado.close();
-			aux = false;
-			break;
 		case 1:
 			System.out.println(" CADASTRAR DADOS DO ALUNO ");
 			
@@ -82,9 +71,9 @@ public class Menu {
 
 			System.out.println("Aluno cadastrado com sucesso!!!");
 			System.out.println("Deseja cadastrar outro aluno? 1 - SIM 0 - NÃO");
-			opsAluno = teclado.nextInt();
+			opsMenu = teclado.nextInt();
 
-break;
+			break;
 
 			// caso selecionado a opção 2
 		case 2:
@@ -95,7 +84,7 @@ break;
 		case 3:
 			System.out.println(" ALTERAR DADOS DO ALUNO ");
 			System.out.println("Digite o nome do aluno a ser alterado: ");
-		//Aluno obj = alunoService.buscarAluno(teclado.next());
+		   // Aluno obj = alunoService.buscarAluno(teclado.next());
 			System.out.println("Digite o telefone do aluno a ser alterado: ");
 			//alunoService.alterarAluno(objt, nome, cpf, matricula, email, telefone, situacao);
 
@@ -107,21 +96,26 @@ break;
 			System.out.println("Digite o nome do aluno a ser apagado: ");
 			alunoService.apagarAluno(teclado.next());
 			break;
+			
 
-	default:
-	break;
+default:
+	System.out.println("Saindo...");
+	teclado.close();
+break;
 		}
-	}
+}
+	
 	case 2:
-		// Menu do curso
-			System.out.println("   Você está no menu CURSO    ");
-			System.out.println("                              ");
-			System.out.println("1 - CADASTRAR      2 - LISTAR ");
-			System.out.println("3 - ALTERAR        4 - EXCLUIR ");
-				
-			System.out.println("Selecione uma opção: ");
-				opsCurso = teclado.nextInt();
+		
 		while(opsCurso!=0) {
+			// Menu do curso
+						System.out.println("   Você está no menu CURSO    ");
+						System.out.println("                              ");
+						System.out.println("1 - CADASTRAR      2 - LISTAR ");
+						System.out.println("3 - ALTERAR        4 - EXCLUIR ");
+							
+						System.out.println("Selecione uma opção: ");
+							opsCurso = teclado.nextInt();
 				
 		switch (opsCurso) {
 		case 1:
@@ -157,6 +151,8 @@ break;
 			System.out.println(" EXCLUIR DADOS DO ALUNO ");
 
 		default:
+			System.out.println("Saindo...");
+			teclado.close();
 			break;
 		}
 	}
@@ -216,6 +212,8 @@ break;
 			
 
 			default:
+				System.out.println("Saindo...");
+				teclado.close();
 				break;
 			}
 		}
@@ -263,29 +261,19 @@ case 3:
 	// caso selecionado a opção 4
 case 4: 
 	System.out.println(" EXCLUIR DADOS DO PROFESSOR ");
-
+break;
 	
 
 default:
+	System.out.println("Saindo...");
+	teclado.close();
 	break;
 }
 	
 	break;
-
-	
 		
 	}
-
-	
-
-	
-	
-	
-	
-		
-		
-
-	}
+}
 	teclado.close();
 
 
