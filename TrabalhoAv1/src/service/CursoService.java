@@ -14,8 +14,8 @@ public class CursoService {
 
 	
 	//Adicionando curso
-	public void addCurso(String nome, int codigo, String turno, Professor coordenador) {
-		Curso p = new Curso(nome, codigo, turno, coordenador);
+	public void addCurso(String nome, int codigo, String turno) {
+		Curso p = new Curso(nome, codigo, turno);
 		listaCurso.add(p);
 	}
 	//Pesquisando curso
@@ -31,11 +31,10 @@ public class CursoService {
 	}
 	
 	//alterando dados do curso
-	public void alterarCurso(Curso obj, String nome, int codigo, String turno, Professor coordenador, Disciplina disciplina) {
+	public void alterarCurso(Curso obj, String nome, int codigo, String turno) {
 		obj.setNome(nome);
 		obj.setCodigo(codigo);
 		obj.setTurno(turno);
-		obj.setCoordenador(coordenador);		
 	}
 	
 	//deletar dados do curso

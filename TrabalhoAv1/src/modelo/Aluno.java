@@ -1,7 +1,7 @@
 package modelo;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Aluno {
 	private String nome;
@@ -11,7 +11,6 @@ public class Aluno {
 	private long telefone;
 	private List<Curso> cursos = new ArrayList();
 	private List<Disciplina> disciplinas = new ArrayList();
-	//private String testeSituacao;
 	
 	public Aluno(String nome, long cpf, long matricula, String email, long telefone ) {
 		this.nome = nome;
@@ -79,6 +78,12 @@ public class Aluno {
 			
 		}
 	}
+	
+	public void povoar() {
+		
+		
+	}
+	
 	
 	public void mostrarAlunos() {
 		System.out.println("Nome do aluno: " + this.nome);

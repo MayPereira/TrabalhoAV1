@@ -3,6 +3,7 @@ package programa;
 import java.util.Scanner;
 
 import modelo.Aluno;
+import modelo.Professor;
 import service.AlunoService;
 import service.CursoService;
 import service.DisciplinaService;
@@ -12,7 +13,6 @@ public class Menu {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		boolean aux = true;
 
 		AlunoService alunoService = new AlunoService();
 		CursoService cursoService = new CursoService();
@@ -54,15 +54,15 @@ public class Menu {
 					case 1:
 						System.out.println(" CADASTRAR DADOS DO ALUNO ");
 
-						System.out.println("Nome do aluno: ");
+						System.out.print("Nome do aluno: ");
 						String nome = teclado.next();
-						System.out.println("CPF do aluno: ");
+						System.out.print("CPF do aluno: ");
 						long cpf = teclado.nextLong();
-						System.out.println("Matrícula do aluno: ");
+						System.out.print("Matrícula do aluno: ");
 						long matricula = teclado.nextLong();
-						System.out.println("Email do aluno: ");
+						System.out.print("Email do aluno: ");
 						String email = teclado.next();
-						System.out.println("Telefone do aluno: ");
+						System.out.print("Telefone do aluno: ");
 						long telefone = teclado.nextLong();
 						// System.out.println("Curso matriculado: ");
 						// curso = teclado.nextLine();
@@ -71,8 +71,8 @@ public class Menu {
 						alunoService.addAluno(nome, cpf, matricula, email, telefone);
 
 						System.out.println("Aluno cadastrado com sucesso!!!");
-						System.out.println("Deseja cadastrar outro aluno? 1 - SIM 0 - NÃO");
-						opsMenu = teclado.nextInt();
+						System.out.println("Deseja voltar ao menu aluno? 1 - SIM 0 - NÃO");
+						opsAluno = teclado.nextInt();
 
 						break;
 
@@ -87,8 +87,7 @@ public class Menu {
 						System.out.println("Digite o nome do aluno a ser alterado: ");
 						// Aluno obj = alunoService.buscarAluno(teclado.next());
 						System.out.println("Digite o telefone do aluno a ser alterado: ");
-						// alunoService.alterarAluno(objt, nome, cpf, matricula, email, telefone,
-						// situacao);
+						// alunoService.alterarAluno(obj, nome, cpf, matricula, email, telefone);
 
 						break;
 
@@ -98,6 +97,7 @@ public class Menu {
 						System.out.println("Digite o nome do aluno a ser apagado: ");
 						alunoService.apagarAluno(teclado.next());
 						break;
+						
 					default:
 						System.out.println("Saindo...");
 						teclado.close();
@@ -106,6 +106,8 @@ public class Menu {
 						
 					}
 				}
+				opsAluno = -1;
+
 				break;
 
 			case 2:
@@ -131,11 +133,11 @@ public class Menu {
 						int codigo = teclado.nextInt();
 						System.out.println("Digite o turno do curso: ");
 						String turno = teclado.next();
-						System.out.println("Digite o nome do coordenador");
-						String coordenador = teclado.next();
-						System.out.println("Digite o nome disciplina: ");
-						String disciplina = teclado.next();
-						// cursoService.addCurso(nome, codigo, turno, coordenador, disciplina);
+						cursoService.addCurso(nome, codigo, turno);
+
+						System.out.println("Curso cadastrado com sucesso!!!");
+						System.out.println("Deseja voltar ao menu curso? 1 - SIM 0 - NÃO");
+						opsCurso = teclado.nextInt();
 
 						break;
 					case 2:
@@ -162,6 +164,7 @@ public class Menu {
 						break;
 					}
 				}
+				opsCurso = -1;
 				break;
 			case 3:
 				// Menu da disciplina
@@ -198,6 +201,10 @@ public class Menu {
 
 						// disciplinaService.addDisciplina(nome, codigo, professor, chamada, sala,
 						// cargaHo, horario, custo);
+
+						System.out.println("Disciplina cadastrado com sucesso!!!");
+						System.out.println("Deseja voltar ao menu disciplina? 1 - SIM 0 - NÃO");
+						opsDisciplina = teclado.nextInt();
 						break;
 
 					case 2:
@@ -223,6 +230,7 @@ public class Menu {
 						break;
 					}
 				}
+				 opsDisciplina = -1;
 				break;
 			case 4:
 				// Menu do professor
@@ -254,6 +262,10 @@ public class Menu {
 						String disciplina = teclado.next();
 						professorService.addProfessor(nome, cpf, email, telefone, endereco, categoria);
 
+						System.out.println("Professor cadastrado com sucesso!!!");
+						System.out.println("Deseja voltar ao menu professor? 1 - SIM 0 - NÃO");
+						opsProfessor = teclado.nextInt();
+
 						break;
 					case 2:
 						System.out.println(" LISTAR DADOS DO PROFESSOR ");
@@ -270,6 +282,7 @@ public class Menu {
 					case 4:
 						System.out.println(" EXCLUIR DADOS DO PROFESSOR ");
 						break;
+						
 
 					default:
 						System.out.println("Saindo...");
@@ -277,11 +290,13 @@ public class Menu {
 						break;
 					}
 
-					break;
-
-				}
-			}
-break;
+		            opsProfessor = -1;
+		            break;
+		          }
+		      }
+			System.out.println("opsMenu >> "+opsMenu);
+		      opsMenu = -1;
+//break;
 		}
 
 	}

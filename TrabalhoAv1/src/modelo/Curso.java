@@ -13,11 +13,10 @@ public class Curso {
 	public Curso() {
 		// TODO Auto-generated constructor stub
 	}
-	public Curso(String nome, int codigo, String turno, Professor coordenador) {
+	public Curso(String nome, int codigo, String turno) {
 		this.nome = nome;
 		this.codigo = codigo;
 		this.turno = turno;
-		this.coordenador = coordenador;
 	}
 	public String getNome() {
 		return nome;
@@ -43,12 +42,5 @@ public class Curso {
 		this.turno = turno;
 	}
 
-	public Professor getCoordenador() {
-		return coordenador;
-	}
-
-	public void setCoordenador(Professor coordenador) {
-		this.coordenador = coordenador;
-	}
 
 }

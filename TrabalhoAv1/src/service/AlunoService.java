@@ -56,6 +56,15 @@ public class AlunoService {
 			
 		}
 	}
+/*	public void povoar() {
+		addAluno("mayara", 99999999, 101010, "teste@gmail", 96969696);
+		addAluno("pedro", 99999999, 101010, "teste@gmail", 96969696);
+		addAluno("paulo", 99999999, 101010, "teste@gmail", 96969696);
+		addAluno("alexandre", 99999999, 101010, "teste@gmail", 96969696);
+		addAluno("vinicius", 99999999, 101010, "teste@gmail", 96969696);
 
+		
+		
+	} */
 
 }
