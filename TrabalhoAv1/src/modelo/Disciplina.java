@@ -11,21 +11,21 @@ public class Disciplina {
 	private int sala;
 	private String cargaHo;
 	private String horario;
-	private int custo;	
+	private int custo;
 
 	public Disciplina() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public List<Professor> getProfessor() {
 		return this.professor;
 	}
-	public List<Aluno> getChamada(){
+
+	public List<Aluno> getChamada() {
 		return this.chamada;
 	}
-	
-	public Disciplina(String nome, int codigo, int sala, String cargaHo,
-			String horario, int custo) {
+
+	public Disciplina(String nome, int codigo, int sala, String cargaHo, String horario, int custo) {
 		this.nome = nome;
 		this.codigo = codigo;
 		this.sala = sala;
@@ -33,7 +33,6 @@ public class Disciplina {
 		this.horario = horario;
 		this.custo = custo;
 	}
-
 
 	public String getNome() {
 		return nome;
@@ -82,6 +81,17 @@ public class Disciplina {
 	public void setCusto(int custo) {
 		this.custo = custo;
 	}
-	
+
+	// metodos da disciplina
+
+
+	public void mostrarDisciplina() {
+		System.out.println("Disciplina" + this.nome);
+		System.out.println("Código da disciplina: " + this.codigo);
+		System.out.println("Sala: " + this.sala);
+		System.out.println("Carga horária: " + this.cargaHo);
+		System.out.println("Horário: " + this.horario);
+		System.out.println("Custo da disciplina: " + this.custo);
+	}
 
 }

@@ -43,5 +43,10 @@ public class CursoService {
 		listaCurso.remove(obj);
 		
 	}
+	public void listarCurso() {
+		for (Curso curso : listaCurso) {
+			curso.mostraCurso();			
+		}
+	}
 	
 }

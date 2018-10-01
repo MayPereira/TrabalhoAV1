@@ -84,7 +84,7 @@ public class Menu {
 					// caso selecionado a opção 3
 					case 3:
 						System.out.println(" ALTERAR DADOS DO ALUNO ");
-						System.out.println("Digite o nome do aluno a ser alterado: ");
+						System.out.print("Digite o nome do aluno a ser alterado: ");
 						// Aluno obj = alunoService.buscarAluno(teclado.next());
 						System.out.println("Digite o telefone do aluno a ser alterado: ");
 						// alunoService.alterarAluno(obj, nome, cpf, matricula, email, telefone);
@@ -94,7 +94,7 @@ public class Menu {
 					// caso selecionado a opção 4
 					case 4:
 						System.out.println(" EXCLUIR DADOS DO ALUNO ");
-						System.out.println("Digite o nome do aluno a ser apagado: ");
+						System.out.print("Digite o nome do aluno a ser apagado: ");
 						alunoService.apagarAluno(teclado.next());
 						break;
 						
@@ -127,23 +127,22 @@ public class Menu {
 					case 1:
 						System.out.println(" CADASTRAR DADOS DO CURSO ");
 
-						System.out.println("Digite nome do curso: ");
+						System.out.print("Digite nome do curso: ");
 						String nome = teclado.next();
-						System.out.println("Digite codigo do curso: ");
+						System.out.print("Digite codigo do curso: ");
 						int codigo = teclado.nextInt();
-						System.out.println("Digite o turno do curso: ");
+						System.out.print("Digite o turno do curso: ");
 						String turno = teclado.next();
 						cursoService.addCurso(nome, codigo, turno);
 
-						System.out.println("Curso cadastrado com sucesso!!!");
-						System.out.println("Deseja voltar ao menu curso? 1 - SIM 0 - NÃO");
+						System.out.print("Curso cadastrado com sucesso!!!");
+						System.out.print("Deseja voltar ao menu curso? 1 - SIM 0 - NÃO: ");
 						opsCurso = teclado.nextInt();
 
 						break;
 					case 2:
 						System.out.println(" LISTAR DADOS DO CURSO ");
-						// criar método de listar na classe curso!
-
+						cursoService.listarCurso();
 						break;
 
 					// caso selecionado a opção 3
@@ -154,8 +153,10 @@ public class Menu {
 
 					// caso selecionado a opção 4
 					case 4:
-						System.out.println(" EXCLUIR DADOS DO ALUNO ");
+						System.out.println(" EXCLUIR DADOS DO CURSO ");
+						System.out.print("Digite o nome do curso a ser apagado: ");
 
+						cursoService.deletarCurso(teclado.next());
 						break;
 
 					default:
@@ -180,23 +181,23 @@ public class Menu {
 
 					switch (opsDisciplina) {
 					case 1:
-						System.out.println(" CADASTRAR DADOS DA DISCIPLINA ");
-						System.out.println("Digite o nome da disciplina: ");
+						System.out.print(" CADASTRAR DADOS DA DISCIPLINA ");
+						System.out.print("Digite o nome da disciplina: ");
 						String nome = teclado.next();
-						System.out.println("Digite o codigo da disciplina: ");
+						System.out.print("Digite o codigo da disciplina: ");
 						int codigo = teclado.nextInt();
-						System.out.println("Digite o professor da disciplina: ");
+						System.out.print("Digite o professor da disciplina: ");
 						// perguntar em sala
 						Scanner professor = teclado.useDelimiter(nome);
-						System.out.println("Digite a chamada: ");
+						System.out.print("Digite a chamada: ");
 						boolean chamada = teclado.hasNext();
-						System.out.println("Informe a sala: ");
+						System.out.print("Informe a sala: ");
 						int sala = teclado.nextInt();
-						System.out.println("Informe a carga horária da disciplina: ");
+						System.out.print("Informe a carga horária da disciplina: ");
 						String cargaHo = teclado.next();
-						System.out.println("Informe o horário do curso: ");
+						System.out.print("Informe o horário do curso: ");
 						String horario = teclado.next();
-						System.out.println("Informe o custo: ");
+						System.out.print("Informe o custo: ");
 						int custo = teclado.nextInt();
 
 						// disciplinaService.addDisciplina(nome, codigo, professor, chamada, sala,
@@ -210,6 +211,8 @@ public class Menu {
 					case 2:
 						System.out.println(" LISTAR DADOS DA DISCIPLINA ");
 						// criar método de listar na classe curso!
+						disciplinaService.listarDisciplina();
+						
 						break;
 
 					// caso selecionado a opção 3
@@ -221,6 +224,9 @@ public class Menu {
 					// caso selecionado a opção 4
 					case 4:
 						System.out.println(" EXCLUIR DADOS DA DISCIPLINA ");
+						System.out.print("Digite o nome da disciplina a ser apagado: ");
+
+						disciplinaService.excluirDisciplina(teclado.next());
 
 						break;
 
@@ -246,30 +252,31 @@ public class Menu {
 
 					switch (opsProfessor) {
 					case 1:
-						System.out.println("Digite o nome do professor: ");
+						System.out.print("Digite o nome do professor: ");
 						String nome = teclado.next();
-						System.out.println("Informe CPF do professor: ");
+						System.out.print("Informe CPF do professor: ");
 						long cpf = teclado.nextLong();
-						System.out.println("Informe email do professor: ");
+						System.out.print("Informe email do professor: ");
 						String email = teclado.next();
-						System.out.println("Informe telefone do professor: ");
+						System.out.print("Informe telefone do professor: ");
 						long telefone = teclado.nextLong();
-						System.out.println("Informe endereço do professor: ");
+						System.out.print("Informe endereço do professor: ");
 						String endereco = teclado.next();
-						System.out.println("Informe a categoria do professor: ");
+						System.out.print("Informe a categoria do professor: ");
 						String categoria = teclado.next();
-						System.out.println("Informe disciplina do professor: ");
+						System.out.print("Informe disciplina do professor: ");
 						String disciplina = teclado.next();
 						professorService.addProfessor(nome, cpf, email, telefone, endereco, categoria);
 
-						System.out.println("Professor cadastrado com sucesso!!!");
-						System.out.println("Deseja voltar ao menu professor? 1 - SIM 0 - NÃO");
+						System.out.print("Professor cadastrado com sucesso!!!");
+						System.out.print("Deseja voltar ao menu professor? 1 - SIM 0 - NÃO");
 						opsProfessor = teclado.nextInt();
 
 						break;
 					case 2:
 						System.out.println(" LISTAR DADOS DO PROFESSOR ");
 						// criar método de listar na classe curso!
+						professorService.listaProfessor();
 						break;
 
 					// caso selecionado a opção 3
@@ -281,6 +288,8 @@ public class Menu {
 					// caso selecionado a opção 4
 					case 4:
 						System.out.println(" EXCLUIR DADOS DO PROFESSOR ");
+						System.out.print("Digite o nome do professor a ser apagado: ");
+						professorService.apagarProfessor(teclado.next());
 						break;
 						
 

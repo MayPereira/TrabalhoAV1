@@ -41,6 +41,10 @@ public class Curso {
 	public void setTurno(String turno) {
 		this.turno = turno;
 	}
-
+public void mostraCurso() {
+	System.out.println("Curso: " + this.nome);
+	System.out.println("Código do curso: " + this.codigo);
+	System.out.println("Turno: " + this.turno);
+}
 
 }

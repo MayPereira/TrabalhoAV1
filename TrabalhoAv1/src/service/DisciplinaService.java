@@ -47,5 +47,10 @@ public class DisciplinaService {
 		String obj = buscaDisciplina(nome);
 		listaDisciplina.remove(obj);
 	}
+	public void listarDisciplina() {
+		for (Disciplina disciplina : listaDisciplina) {
+			disciplina.mostrarDisciplina();
+		}
+	}
 	
 }

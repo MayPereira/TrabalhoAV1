@@ -79,19 +79,12 @@ public class Aluno {
 		}
 	}
 	
-	public void povoar() {
-		
-		
-	}
-	
-	
 	public void mostrarAlunos() {
 		System.out.println("Nome do aluno: " + this.nome);
 		System.out.println("CPF do aluno: " + this.cpf);
 		System.out.println("Matrícula do aluno: " + this.matricula);
 		System.out.println("Email do aluno: " + this.email);
 		System.out.println("Telefone do aluno: " + this.telefone);
-		//System.out.println("Situação do aluno: " + );		
 	}
 
 	}

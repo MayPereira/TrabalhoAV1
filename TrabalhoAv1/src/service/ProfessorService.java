@@ -44,7 +44,11 @@ public class ProfessorService {
 		String obj = buscarProfessor(nome);
 		listaProfessor.remove(obj);
 	}
-	
+	public void listaProfessor() {
+		for (Professor professor : listaProfessor) {
+			professor.mostraProfessor();
+		}
+	}
 
 	
 
