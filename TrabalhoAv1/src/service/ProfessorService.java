@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 
+import modelo.Disciplina;
 import modelo.Professor;
 
 public class ProfessorService {
@@ -59,7 +60,7 @@ public class ProfessorService {
 			professor.mostraProfessor();
 		}
 	}
-
+	
 	
 
 }

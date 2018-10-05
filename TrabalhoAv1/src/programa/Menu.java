@@ -66,10 +66,6 @@ public class Menu {
 						String email = teclado.next();
 						System.out.print("Telefone do aluno: ");
 						long telefone = teclado.nextLong();
-						// System.out.println("Curso matriculado: ");
-						// curso = teclado.nextLine();
-						// System.out.println("Disciplina matriculada: ");
-						// String disciplina = teclado.nextLine();
 						alunoService.addAluno(nome, cpf, matricula, email, telefone);
 
 						System.out.println("Aluno cadastrado com sucesso!!!");
@@ -82,6 +78,8 @@ public class Menu {
 					case 2:
 						System.out.println(" LISTAR DADOS DO ALUNO ");
 						alunoService.listarAluno();
+						System.out.print("Situação do aluno: " );
+						alunoService.situacaoM();
 						break;
 					// caso selecionado a opção 3
 					case 3:
@@ -305,7 +303,7 @@ public class Menu {
 						break;
 					case 2:
 						System.out.println(" LISTAR DADOS DO PROFESSOR ");
-						// criar método de listar na classe curso!
+						// método de listar na classe curso!
 						professorService.listaProfessor();
 						break;
 
@@ -349,8 +347,7 @@ public class Menu {
 		      }
 			System.out.println("opsMenu >> "+opsMenu);
 		      opsMenu = -1;
-//break;
-		}
+		      }
 
 	}
 }

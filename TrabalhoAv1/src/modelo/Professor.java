@@ -13,7 +13,6 @@ public class Professor {
 	private List<Disciplina> disciplinas = new ArrayList();
 	
 	public Professor() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Professor(String nome, long cpf, String email, long telefone, String endereco, String categoria) {
@@ -74,13 +73,7 @@ public class Professor {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
-	public void cadastraCategoria(){
-		if (categoria=="1") {
-			System.out.println("");
-		}
-	}
-	
+		
 	public void mostraProfessor() {
 		System.out.println("Nome do professor: " + this.nome);
 		System.out.println("CPF do professor: " + this.cpf);

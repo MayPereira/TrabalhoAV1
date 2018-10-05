@@ -56,10 +56,17 @@ public class DisciplinaService {
 		Disciplina obj = buscaDisciplina(nome);
 		listaDisciplina.remove(obj);
 	}
+	//listar dados da disciplina
+
 	public void listarDisciplina() {
 		for (Disciplina disciplina : listaDisciplina) {
 			disciplina.mostrarDisciplina();
 		}
+	
+			
+			
+			
+		}
 	}
 	
-}
+
