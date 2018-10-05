@@ -19,10 +19,10 @@ public class CursoService {
 		listaCurso.add(p);
 	}
 	//Pesquisando curso
-	public String buscarCurso(String nome) {
+	public Curso buscarCurso(String nome) {
 		for (Curso curso : listaCurso) {
 			if(curso.getNome().equals(nome)) {
-				return nome;
+				return curso;
 			}
 			
 		}
@@ -39,7 +39,7 @@ public class CursoService {
 	
 	//deletar dados do curso
 	public void deletarCurso(String nome) {
-		String obj = buscarCurso(nome);
+		Curso obj = buscarCurso(nome);
 		listaCurso.remove(obj);
 		
 	}

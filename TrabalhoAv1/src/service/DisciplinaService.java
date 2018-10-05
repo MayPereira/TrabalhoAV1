@@ -21,10 +21,10 @@ public class DisciplinaService {
 	}
 	
 	//Buscando disciplina
-	public String buscaDisciplina(String nome) {
+	public Disciplina buscaDisciplina(String nome) {
 		for (Disciplina disciplina : listaDisciplina) {
 			if (disciplina.getNome().equals(nome)) {
-				return nome;
+				return disciplina;
 			}
 			
 		}
@@ -44,7 +44,7 @@ public class DisciplinaService {
 	//excluir dados da disciplina
 	
 	public void excluirDisciplina(String nome) {
-		String obj = buscaDisciplina(nome);
+		Disciplina obj = buscaDisciplina(nome);
 		listaDisciplina.remove(obj);
 	}
 	public void listarDisciplina() {

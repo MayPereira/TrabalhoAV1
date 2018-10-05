@@ -11,13 +11,12 @@ public class TesteMetodos {
 		Aluno aluno = new Aluno();
 		Disciplina disciplina = new Disciplina();
 		disciplina.setNome("portugues");
-
-		aluno.getDisciplinas();
-		aluno.setNome("mayara");
+		disciplina.setCusto(25);
+		disciplina.calcularCategoria(25);
 		aluno.getDisciplinas().add(disciplina);
 		
 		
-		aluno.situacaoM();
+		//aluno.situacaoM();
 		aluno.mostrarAlunos();
 
 	}

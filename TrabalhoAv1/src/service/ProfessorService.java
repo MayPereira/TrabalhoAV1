@@ -18,10 +18,10 @@ public class ProfessorService {
 		}
 	
 	//pesquisando professor
-	public String buscarProfessor(String nome) {
+	public Professor buscarProfessor(String nome) {
 		for (Professor professor : listaProfessor) {
 			if(professor.getNome().equals(nome)) {
-				return nome;
+				return professor;
 			}
 			
 		}
@@ -41,7 +41,7 @@ public class ProfessorService {
 		}
 	//Apagar dados do professor
 	public void apagarProfessor(String nome) {
-		String obj = buscarProfessor(nome);
+		Professor obj = buscarProfessor(nome);
 		listaProfessor.remove(obj);
 	}
 	public void listaProfessor() {

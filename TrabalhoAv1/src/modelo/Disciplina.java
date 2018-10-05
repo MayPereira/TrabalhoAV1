@@ -93,5 +93,17 @@ public class Disciplina {
 		System.out.println("Horário: " + this.horario);
 		System.out.println("Custo da disciplina: " + this.custo);
 	}
+	public void calcularCategoria(int custo) {
+		for (Professor professor : professor) {
+			if (professor.getCategoria()=="especialista") {
+				this.setCusto(25);
+				System.out.println("Professor especialista. ");
+				
+			}
+			
+		}
+		
+		
+	}
 
 }

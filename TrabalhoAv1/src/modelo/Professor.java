@@ -75,6 +75,12 @@ public class Professor {
 		this.categoria = categoria;
 	}
 	
+	public void cadastraCategoria(){
+		if (categoria=="1") {
+			System.out.println("");
+		}
+	}
+	
 	public void mostraProfessor() {
 		System.out.println("Nome do professor: " + this.nome);
 		System.out.println("CPF do professor: " + this.cpf);
@@ -83,6 +89,7 @@ public class Professor {
 		System.out.println("Endereço do professor: " + this.endereco);
 		System.out.println("Categoria do professor: " + this.categoria);		
 	}
+	
 	
 
 }

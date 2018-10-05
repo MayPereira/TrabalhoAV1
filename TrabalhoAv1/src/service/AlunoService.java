@@ -2,11 +2,11 @@ package service;
 import java.util.ArrayList;
 
 import modelo.Aluno;
-import modelo.Curso;
 import modelo.Disciplina;
 
 public class AlunoService {
 	ArrayList<Aluno> listaAluno = new ArrayList();
+	ArrayList<Disciplina> disciplinas = new ArrayList();
 	
 	public ArrayList<Aluno> getListaAluno(){
 		return this.listaAluno;
@@ -21,10 +21,10 @@ public class AlunoService {
 	}
 	
 	//Pesquisando aluno
-	public String buscarAluno(String nome) {
+	public Aluno buscarAluno(String nome) {
 		for (Aluno aluno : listaAluno) {
 			if(aluno.getNome().equals(nome)) {
-				return nome;
+				return aluno;
 			}
 			
 		}
@@ -45,14 +45,22 @@ public class AlunoService {
 	//Apagar dados do aluno
 	
 	public void apagarAluno(String nome) {
-		String obj = buscarAluno(nome);
+		Aluno obj = buscarAluno(nome);
 		listaAluno.remove(obj);
 		
 	}
 	public void listarAluno() {
 		for (Aluno aluno : listaAluno) {
 			aluno.mostrarAlunos();
-			aluno.situacaoM();
+			//aluno.situacaoM();
+			
+		}
+	}
+	public void situacaoM() {
+		if (disciplinas.isEmpty()) {
+			System.out.println("Aluno pendente.");
+		}else{
+			System.out.println("Aluno matriculado.");
 			
 		}
 	}

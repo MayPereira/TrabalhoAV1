@@ -70,14 +70,7 @@ public class Aluno {
 	}
 
 	//metodos
-	public void situacaoM() {
-		if (disciplinas.isEmpty()) {
-			System.out.println("Aluno pendente.");
-		}else{
-			System.out.println("Aluno matriculado.");
-			
-		}
-	}
+	
 	
 	public void mostrarAlunos() {
 		System.out.println("Nome do aluno: " + this.nome);
