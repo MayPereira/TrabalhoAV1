@@ -34,12 +34,20 @@ public class AlunoService {
 	
 	//Atualizar dados do aluno
 	
-	public void alterarAluno(Aluno obj, String nome, long cpf, long matricula, String email, long telefone) {
+	public void alterarNome(Aluno obj, String nome) {
 		obj.setNome(nome);
+	}
+	public void alterarCpf(Aluno obj, long cpf) {
 		obj.setCpf(cpf);
+	}
+	public void alterarMatricula(Aluno obj, long matricula) {
 		obj.setMatricula(matricula);
+	}
+	public void alterarEmail(Aluno obj, String email) {
+		obj.setEmail(email);
+	}
+	public void alterarTelefone(Aluno obj, long telefone) {
 		obj.setTelefone(telefone);
-		
 	}
 	
 	//Apagar dados do aluno

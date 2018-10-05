@@ -32,13 +32,22 @@ public class DisciplinaService {
 		return null;
 	}
 	//Alterando dados da disciplina	
-	public void alterarDisciplina(Disciplina obj, String nome, int codigo, Professor professor, Aluno chamada, int sala, String cargaHo,
-			String horario, int custo) {
+	public void alterarNome(Disciplina obj, String nome) {
 		obj.setNome(nome);
+	}
+	public void alterarcodigo(Disciplina obj, int codigo) {
 		obj.setCodigo(codigo);
+	}
+	public void alterarSala(Disciplina obj, int sala) {
 		obj.setSala(sala);
-		obj.setCargaHo(cargaHo);
+	}
+	public void alteraCargah(Disciplina obj, String cargaH) {
+		obj.setCargaHo(cargaH);
+	}
+	public void alteraHorario(Disciplina obj, String horario) {
 		obj.setHorario(horario);
+	}
+	public void alteraCusto(Disciplina obj, int custo){
 		obj.setCusto(custo);
 	}
 	//excluir dados da disciplina

@@ -31,14 +31,24 @@ public class ProfessorService {
 	
 	//Atualizando dados do professo
 	
-	public void alterarProfessor(Professor obj, String nome, long cpf, String email, long telefone, String endereco, String categoria) {
+	public void alterarProfessor(Professor obj, String nome) {
 		obj.setNome(nome);
-		obj.setCpf(cpf);
-		obj.setEmail(email);
-		obj.setTelefone(telefone);
-		obj.setEndereco(endereco);
-		obj.setCategoria(categoria);
 		}
+	public void alteraCpf(Professor obj, long cpf) {
+		obj.setCpf(cpf);		
+	}
+	public void alterarEmail(Professor obj, String email) {
+		obj.setEmail(email);
+	}
+	public void alteraTelefone(Professor obj, long telefone) {
+		obj.setTelefone(telefone);	
+	}
+	public void alteraEndereco(Professor obj, String endereco) {
+		obj.setEndereco(endereco);
+	}
+	public void alteraCategoria(Professor obj, String categoria) {
+		obj.setCategoria(categoria);
+	}
 	//Apagar dados do professor
 	public void apagarProfessor(String nome) {
 		Professor obj = buscarProfessor(nome);

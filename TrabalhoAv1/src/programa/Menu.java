@@ -3,6 +3,8 @@ package programa;
 import java.util.Scanner;
 
 import modelo.Aluno;
+import modelo.Curso;
+import modelo.Disciplina;
 import modelo.Professor;
 import service.AlunoService;
 import service.CursoService;
@@ -85,10 +87,20 @@ public class Menu {
 					case 3:
 						System.out.println(" ALTERAR DADOS DO ALUNO ");
 						System.out.print("Digite o nome do aluno a ser alterado: ");
-						// Aluno obj = alunoService.buscarAluno(teclado.next());
+						Aluno obj = alunoService.buscarAluno(teclado.next());
+						
+						System.out.println("Digite o nome a ser alterado");
+						alunoService.alterarNome(obj, teclado.next());
 						System.out.println("Digite o telefone do aluno a ser alterado: ");
-						// alunoService.alterarAluno(obj, nome, cpf, matricula, email, telefone);
-
+						alunoService.alterarTelefone(obj, teclado.nextLong());;
+						System.out.println("Digite o CPF a ser alterado");
+						alunoService.alterarCpf(obj, teclado.nextLong());
+						System.out.println("Digite a matrícula do aluno a ser alterado");
+						alunoService.alterarMatricula(obj, teclado.nextLong());
+						System.out.println("Digite o email a ser alterado");
+						alunoService.alterarEmail(obj, teclado.next());
+						System.out.println("Digite o CPF a ser alterado");
+						alunoService.alterarTelefone(obj, teclado.nextLong());						
 						break;
 
 					// caso selecionado a opção 4
@@ -148,7 +160,15 @@ public class Menu {
 					// caso selecionado a opção 3
 					case 3:
 						System.out.println(" ALTERAR DADOS DO CURSO ");
-						// cursoService.alterarCurso(obj, nome, codigo, turno, coordenador, disciplina);
+						System.out.print("Digite o nome do curso a ser alterado: ");
+						Curso obj = cursoService.buscarCurso(teclado.next());
+						
+						System.out.println("Digite o novo nome do curso: ");
+						cursoService.alterarCurso(obj, teclado.next());
+						System.out.println("Digite novo código do curso: ");
+						cursoService.alteraCodigo(obj, teclado.nextInt());
+						System.out.println("Digite novo turno do curso: ");
+						cursoService.alteraTurno(obj, teclado.next());
 						break;
 
 					// caso selecionado a opção 4
@@ -218,7 +238,17 @@ public class Menu {
 					// caso selecionado a opção 3
 					case 3:
 						System.out.println(" ALTERAR DADOS DA DISCIPLINA ");
-						// cursoService.alterarCurso(obj, nome, codigo, turno, coordenador, disciplina);
+						Disciplina obj = disciplinaService.buscaDisciplina(teclado.next());
+						System.out.print("Digite o nome da disciplina a ser alterada: ");
+						disciplinaService.alterarNome(obj, teclado.next());
+						System.out.print("Digite o nome do código da disciplina a ser alterada: ");
+						disciplinaService.alterarcodigo(obj, teclado.nextInt());
+						System.out.print("Digite a nova sala da disciplina a ser alterada: ");
+						disciplinaService.alterarSala(obj, teclado.nextInt());
+						System.out.print("Digite a nova carga horária da disciplina a ser alterada: ");
+						disciplinaService.alteraCargah(obj, teclado.next());
+						System.out.print("Digite o novo custo da disciplina a ser alterada: ");
+						disciplinaService.alteraCusto(obj, teclado.nextInt());	
 						break;
 
 					// caso selecionado a opção 4
@@ -282,7 +312,21 @@ public class Menu {
 					// caso selecionado a opção 3
 					case 3:
 						System.out.println(" ALTERAR DADOS DO PROFESSOR ");
-                    //	cursoService.alterarCurso(obj, nome, codigo, turno, coordenador, disciplina);
+						System.out.println("Digite o nome do professor a ser alterado: ");
+						Professor obj = professorService.buscarProfessor(teclado.next());
+						System.out.println("Digite o novo nome do professor: ");
+						professorService.alterarProfessor(obj, teclado.next());
+						System.out.println("Digite o novo CPF do professor: ");
+						professorService.alteraCpf(obj, teclado.nextLong());
+						System.out.println("Digite o novo e-mail do professor: ");
+						professorService.alterarEmail(obj, teclado.next());
+						System.out.println("Digite o novo telefone do professor: ");
+						professorService.alteraTelefone(obj, teclado.nextLong());
+						System.out.println("Digite o novo endereço do professor: ");
+						professorService.alteraEndereco(obj, teclado.next());
+						System.out.println("Digite a nova categoria do professor: ");
+						professorService.alteraCategoria(obj, teclado.next());
+						
 						break;
 
 					// caso selecionado a opção 4

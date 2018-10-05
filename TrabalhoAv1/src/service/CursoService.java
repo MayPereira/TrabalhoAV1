@@ -31,13 +31,16 @@ public class CursoService {
 	}
 	
 	//alterando dados do curso
-	public void alterarCurso(Curso obj, String nome, int codigo, String turno) {
+	public void alterarCurso(Curso obj, String nome){
 		obj.setNome(nome);
+	}
+	public void alteraCodigo(Curso obj, int codigo) {
 		obj.setCodigo(codigo);
+	}
+	public void alteraTurno(Curso obj, String turno) {
 		obj.setTurno(turno);
 	}
-	
-	//deletar dados do curso
+		//deletar dados do curso
 	public void deletarCurso(String nome) {
 		Curso obj = buscarCurso(nome);
 		listaCurso.remove(obj);
