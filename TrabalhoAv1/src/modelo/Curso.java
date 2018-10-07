@@ -18,6 +18,10 @@ public class Curso {
 		this.codigo = codigo;
 		this.turno = turno;
 	}
+	
+	public List<Disciplina> getDisciplina(){
+		return this.grade;
+	}
 	public String getNome() {
 		return nome;
 	}

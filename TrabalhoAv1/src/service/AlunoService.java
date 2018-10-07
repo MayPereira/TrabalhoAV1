@@ -6,7 +6,10 @@ import modelo.Disciplina;
 
 public class AlunoService {
 	ArrayList<Aluno> listaAluno = new ArrayList();
+//	ArrayList disciplina = new ArrayList();
 	ArrayList<Disciplina> disciplinas = new ArrayList();
+
+	
 	
 	public ArrayList<Aluno> getListaAluno(){
 		return this.listaAluno;
@@ -26,9 +29,9 @@ public class AlunoService {
 			if(aluno.getNome().equals(nome)) {
 				return aluno;
 			}
-			
+			System.out.println("Aluno não encontrado!");
 		}
-		System.out.println("Aluno não encontrado!");
+		
 		return null;
 	}
 	
@@ -59,9 +62,7 @@ public class AlunoService {
 	}
 	public void listarAluno() {
 		for (Aluno aluno : listaAluno) {
-			aluno.mostrarAlunos();
-			//aluno.situacaoM();
-			
+			aluno.mostrarAlunos();			
 		}
 	}
 	public void situacaoM() {
@@ -72,6 +73,7 @@ public class AlunoService {
 			
 		}
 	}
+	 
 /*	public void povoar() {
 		addAluno("mayara", 99999999, 101010, "teste@gmail", 96969696);
 		addAluno("pedro", 99999999, 101010, "teste@gmail", 96969696);

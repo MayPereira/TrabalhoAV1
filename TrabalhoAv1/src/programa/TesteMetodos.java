@@ -13,10 +13,12 @@ public class TesteMetodos {
 		disciplina.setNome("portugues");
 		disciplina.setCusto(25);
 		disciplina.calcularCategoria(25);
+		
+		
 		aluno.getDisciplinas().add(disciplina);
+		disciplina.calcularCategoria(10);
 		
 		
-		//aluno.situacaoM();
 		aluno.mostrarAlunos();
 
 	}

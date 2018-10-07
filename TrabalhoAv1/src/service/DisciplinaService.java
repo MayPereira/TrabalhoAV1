@@ -1,21 +1,25 @@
 package service;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import modelo.Aluno;
 import modelo.Disciplina;
 import modelo.Professor;
 
 public class DisciplinaService {
 	ArrayList<Disciplina> listaDisciplina = new ArrayList();
+	ArrayList<Professor> listaProfessor = new ArrayList<>();
 	
 	public ArrayList<Disciplina> getListaDisciplina(){
 		return this.listaDisciplina;
 	}
+	public ArrayList<Professor> getListaProfessor(){
+		return this.listaProfessor;
+	}
 	
 	//Adicionando disciplina
 	
-	public void addDisciplina(String nome,int codigo,int sala, String cargaHo, String horario, int custo) {
+	public void addDisciplina(String nome,int codigo,int sala, int cargaHo, String horario, int custo) {
 		Disciplina d = new Disciplina(nome, codigo, sala, cargaHo, horario, custo);
 		listaDisciplina.add(d);
 	}
@@ -41,7 +45,7 @@ public class DisciplinaService {
 	public void alterarSala(Disciplina obj, int sala) {
 		obj.setSala(sala);
 	}
-	public void alteraCargah(Disciplina obj, String cargaH) {
+	public void alteraCargah(Disciplina obj, int cargaH) {
 		obj.setCargaHo(cargaH);
 	}
 	public void alteraHorario(Disciplina obj, String horario) {
@@ -63,10 +67,13 @@ public class DisciplinaService {
 			disciplina.mostrarDisciplina();
 		}
 	
+	}	
+	
+
+
 			
 			
-			
-		}
+		
 	}
 	
 

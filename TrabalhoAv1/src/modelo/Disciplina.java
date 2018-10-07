@@ -9,7 +9,7 @@ public class Disciplina {
 	List<Professor> professor = new ArrayList();
 	List<Aluno> chamada = new ArrayList();
 	private int sala;
-	private String cargaHo;
+	private int cargaHo;
 	private String horario;
 	private int custo;
 
@@ -25,7 +25,7 @@ public class Disciplina {
 		return this.chamada;
 	}
 
-	public Disciplina(String nome, int codigo, int sala, String cargaHo, String horario, int custo) {
+	public Disciplina(String nome, int codigo, int sala, int cargaHo, String horario, int custo) {
 		this.nome = nome;
 		this.codigo = codigo;
 		this.sala = sala;
@@ -58,11 +58,11 @@ public class Disciplina {
 		this.sala = sala;
 	}
 
-	public String getCargaHo() {
+	public int getCargaHo() {
 		return cargaHo;
 	}
 
-	public void setCargaHo(String cargaHo) {
+	public void setCargaHo(int cargaHo) {
 		this.cargaHo = cargaHo;
 	}
 
@@ -99,11 +99,19 @@ public class Disciplina {
 				this.setCusto(25);
 				System.out.println("Professor especialista. ");
 				
+			}else if(professor.getCategoria()=="mestre") {
+				this.setCusto(35);		
+				System.out.println("Professor mestre. ");
+			}else if(professor.getCategoria()=="doutor") {
+				this.setCusto(45);
 			}
 			
 		}
 		
-		
+	}
+	public void  custoInfra(int custo) {
+		custo =  cargaHo *30;
+		System.out.println("Custo com infraestrutura: ");
 	}
 
 }

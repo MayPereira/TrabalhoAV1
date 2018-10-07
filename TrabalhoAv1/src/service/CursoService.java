@@ -1,18 +1,24 @@
 package service;
 
+import java.awt.List;
 import java.util.ArrayList;
+
 
 import modelo.Curso;
 import modelo.Disciplina;
-import modelo.Professor;
 
 public class CursoService {
-	ArrayList<Curso> listaCurso = new ArrayList();
+	ArrayList<Curso> listaCurso = new ArrayList();	
 	public ArrayList<Curso> getListaCurso(){
 		return this.listaCurso;
 	}
-
 	
+	public ArrayList<Disciplina> listaDisciplina = new ArrayList();
+	public ArrayList<Disciplina> getListaDisciplina(){
+		return this.listaDisciplina;
+	}
+	
+
 	//Adicionando curso
 	public void addCurso(String nome, int codigo, String turno) {
 		Curso p = new Curso(nome, codigo, turno);
@@ -52,4 +58,8 @@ public class CursoService {
 		}
 	}
 	
+	public void addDisciplina(Curso obj, Disciplina disciplina) {
+		disciplina.getNome();
+		
+	}
 }
