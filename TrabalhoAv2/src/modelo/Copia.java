@@ -30,9 +30,7 @@ public class Copia extends Filme{
 		this.locacao = locacao;
 	}
 	
-	public void alugar() {
-		
-	}
+	
 	
 	
 }

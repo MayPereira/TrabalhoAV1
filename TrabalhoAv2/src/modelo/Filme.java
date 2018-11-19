@@ -65,7 +65,14 @@ public class Filme {
 				+ formato + ", nomeAutores=" + nomeAutores + ", toString()=" + super.toString() + "]";
 	}
 	
-	
+	public void alugarFilme() {
+		System.out.println("Nome do filme " + this.getTitulo());
+		System.out.println("Nome Ators " + this.getNomeAutores());
+		System.out.println("Duração do filme " + this.getDuracao());
+		System.out.println("Ano de lançamento do filme " + this.getAnoLancamento());
+		
+		
+	}
 	
 
 }

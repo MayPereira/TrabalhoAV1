@@ -76,4 +76,12 @@ public class Socio {
 	}
 	
 
+	public void mostrarSocio() {
+		System.out.println("Nome do socio " + this.getNome());
+		System.out.println("Data de adesão " + this.getDataAdesao());
+	
+		
+		
+	}
+
 }
